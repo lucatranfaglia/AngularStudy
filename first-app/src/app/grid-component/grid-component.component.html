@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+            <button class="btn btn-primary"
+                (click)="getClick($event)"
+            >
+            Click
+            </button>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" (click)="getText($event)">
+        </div>
+    </div>
+
+     <div class="row">
+        
+        <div class="col-4">
+            <input type="text" class="form-control" [(ngModel)]="testo2">
+            <p [innerText]="testo2"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        
+        <div class="col-4">
+            <input type="text" class="form-control" #input>
+            <button class="btn btn-primary"
+                (click)="getData(input.value)"
+            >
+            Data
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <label for="">Name</label>
+
+            <input type="text" class="form-control" [(ngModel)]="nome">
+
+            <p *ngIf="nome ==='max' else error"> Il tuo nome è corretto: 
+                {{nome}}
+            </p>
+
+            <!-- REFERENCE -->
+            <ng-template #error>
+                <p>Error: digita un nuovo nome</p>
+            </ng-template>
+
+            <button class="btn btn-primary" (click)="addNome()">
+                Add name
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ---------------------------------- -->
+<!-- ----------- DIRETTIVE ------------ -->
+<!-- ---------------------------------- -->
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let utente of persone">
+                    {{ utente }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Città</th>
+                </tr>
+                <tr *ngFor = "let user of users">
+                    <td>
+                        {{user.nome}}
+                    </td>
+
+                    <td>
+                        {{user.citta}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div id="myGrid" style="height: 100%;" class="ag-theme-alpine"></div>
+
+
