@@ -59,14 +59,21 @@ Data
 # -----------------------------------------------------------
 # Direttive : cambiano le variabili (istruzione per cambiare il DOM)
 1. asterisco -> *ngIf="nome ==='max' "
-2.
+2. base: non modifica la classe, ma assegna un diverso lavoro
 3.
 
 if(x>4){
 }else{}
 
-# DataBinding con Direttiva
+# 1. Asterisco - DataBinding con Direttiva
 <input type="text" class="form-control" [(ngModel)]="nome">
 <p *ngIf="nome ==='max' "> Il tuo nome
     {{nome}}
 </p>
+
+# 2. Base
+<!-- Se classe è true applica la classe active -->
+<h1 [ngClass]="{active: classe}">Direttive base</h1>
+
+<!-- Classe è uguale alla sua negazione -->
+<button class="btn btn-success" (click)="classe = !classe">Click</button>

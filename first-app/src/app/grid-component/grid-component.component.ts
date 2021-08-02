@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class GridComponentComponent implements OnInit {
   public stampa : string = '';
   public  testo2 : string = '';
-  public nome : string = '';
+  public nome1 : string = '';
   public persone = ['Max', 'Paolo', 'Maria'];
-
-  users = [
+  
+  public users = [
     {nome: 'Luca', citta:'Roma'},
     {nome: 'Marco', citta:'Terni'},
     {nome: 'Matteo', citta:'Milano'},
@@ -37,7 +37,11 @@ export class GridComponentComponent implements OnInit {
   }
 
   addNome(){
-      this.persone.push(this.nome);
+      this.persone.push(this.nome1);
+  }
+
+  addUsers(nome:any, citta:any){
+    this.users.push({nome: nome, citta: citta});
   }
 
 }

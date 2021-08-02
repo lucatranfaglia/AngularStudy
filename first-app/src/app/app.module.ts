@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridComponentComponent } from './grid-component/grid-component.component';
+// FORM
 import { FormsModule } from '@angular/forms';
+// (ngSwitch, ngIf, ngFor, ...)
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,8 +20,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    // aggiunto per lav
-    FormsModule
+    // aggiunto per i form 
+    FormsModule,
+    // (ngSwitch, ngIf, ngFor, ...)
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
