@@ -124,12 +124,13 @@
 <!-- ngSwith -->
 <div class="container">
     <div class="row">
+        <h1>Switch</h1>
         <div class="col-4">
             <div [ngSwitch]="valore">
-                <p *ngSwithCase="1"> Il valore è {{valore}}</p>
-                <p *ngSwithCase="10"> Il valore è {{valore}}</p>
-                <p *ngSwithCase="100"> Il valore è {{valore}}</p>
-                <p *ngSwithDefault> Il valore non esiste</p>
+                <div *ngSwithCase="1"> Il valore è {{valore}}</div>
+                <div *ngSwithCase="10"> Il valore è {{valore}}</div>
+                <div *ngSwithCase="100"> Il valore è {{valore}}</div>
+                <div *ngSwithDefault> Il valore non esiste</div>
             </div>
         </div>        
     </div>
@@ -148,4 +149,22 @@
     </div>
 </div>
 
-<div id="myGrid" style="height: 100%;" class="ag-theme-alpine"></div>
+<hr>
+
+
+<!-- [ngStyle]="getStartTimeStyle()" -->
+
+
+<ag-grid-angular
+    #agGrid
+    style="width: 100%; height: 100%;"
+    id="myGrid"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [masterDetail]="true"
+    [detailCellRendererParams]="detailCellRendererParams"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+></ag-grid-angular>
+    
